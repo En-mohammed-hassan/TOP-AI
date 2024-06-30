@@ -12,7 +12,7 @@ const LogIn = ({ setToken }) => {
 	const [password, setPassword] = useState("");
 	// api request for authenticating
 	const handleSubmit = async () => {
-		const response = await fetch("http://react-test.mhd-hasan.com/api/login", {
+		const response = await fetch("https://react-test.mhd-hasan.com/api/login", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

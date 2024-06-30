@@ -11,7 +11,9 @@ const TasksManagment = () => {
 	// fetch tasks from API
 	const fetchTasks = async () => {
 		try {
-			const response = await fetch("http://react-test.mhd-hasan.com/api/tasks");
+			const response = await fetch(
+				"https://react-test.mhd-hasan.com/api/tasks"
+			);
 			const data = await response.json();
 			setTasks(data);
 		} catch (error) {
@@ -25,7 +27,7 @@ const TasksManagment = () => {
 
 	const handleAddTask = async (values) => {
 		try {
-			await fetch("http://react-test.mhd-hasan.com/api/tasks", {
+			await fetch("https://react-test.mhd-hasan.com/api/tasks", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -40,7 +42,7 @@ const TasksManagment = () => {
 
 	const handleDeleteTask = async (key) => {
 		try {
-			await fetch(`http://react-test.mhd-hasan.com/api/tasks/${key}`, {
+			await fetch(`https://react-test.mhd-hasan.com/api/tasks/${key}`, {
 				method: "DELETE",
 				headers: {
 					"Content-Type": "application/json",
@@ -61,7 +63,7 @@ const TasksManagment = () => {
 	const handleUpdateTask = async (values) => {
 		try {
 			await fetch(
-				`http://react-test.mhd-hasan.com/api/tasks/${currentTask.id}`,
+				`https://react-test.mhd-hasan.com/api/tasks/${currentTask.id}`,
 				{
 					method: "PUT",
 					headers: {

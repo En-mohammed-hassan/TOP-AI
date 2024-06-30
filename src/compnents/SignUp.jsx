@@ -24,7 +24,7 @@ const SignUp = ({ setToken }) => {
 
 	const handleSubmit = async (event) => {
 		const response = await fetch(
-			"http://react-test.mhd-hasan.com/api/register",
+			"https://react-test.mhd-hasan.com/api/register",
 			{
 				method: "POST",
 				headers: {

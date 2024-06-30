@@ -19,8 +19,8 @@ const App = () => {
 	}, [token]);
 
 	return (
-		<div className="bg-body-secondary min-vh-100">
-			<div style={{ height: "550px" }}>
+		<div className="bg-body-secondary container-fluid vh-100 ">
+			<div>
 				<BrowserRouter>
 					<Routes>
 						<Route
@@ -66,7 +66,9 @@ const App = () => {
 					</Routes>
 				</BrowserRouter>
 			</div>
-			<Foot></Foot>
+			<div className="fixed-bottom">
+				<Foot></Foot>
+			</div>
 		</div>
 	);
 };

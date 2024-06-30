@@ -8,7 +8,7 @@ const ShowTasks = () => {
 	// fetch tasks from API
 	const fetchTasks = async () => {
 		try {
-			const response = await fetch("http://react-test.mhd-hasan.com/api/tasks");
+			const response = await fetch("https://react-test.mhd-hasan.com/api/tasks");
 			const data = await response.json();
 			setTasks(data);
 		} catch (error) {

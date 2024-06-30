@@ -10,18 +10,20 @@ const Home = ({ setToken }) => {
 	};
 
 	return (
-		<div className="">
-			<Menu theme="dark" mode="horizontal">
-				<Menu.Item key="logout" onClick={handleLogout}>
-					Logout
-				</Menu.Item>
+		<div>
+			<div className="sticky-top">
+				<Menu theme="dark" mode="horizontal">
+					<Menu.Item key="logout" onClick={handleLogout}>
+						Logout
+					</Menu.Item>
 
-				<Menu.Item key="show-tasks">
-					<NavLink to="/all" style={{ "text-decoration": "none" }}>
-						All Tasks
-					</NavLink>
-				</Menu.Item>
-			</Menu>
+					<Menu.Item key="show-tasks">
+						<NavLink to="/all" style={{ "text-decoration": "none" }}>
+							All Tasks
+						</NavLink>
+					</Menu.Item>
+				</Menu>
+			</div>
 			<TasksManagment></TasksManagment>
 		</div>
 	);
