@@ -3,7 +3,6 @@ import UserAvatar from "@/components/UserAvatar";
 import React from "react";
 
 const page = async () => {
-
 	return (
 		<div>
 			<CodeSection>

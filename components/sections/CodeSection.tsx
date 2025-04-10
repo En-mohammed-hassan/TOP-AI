@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 import { useCodeStore } from "@/hooks/useCodeStore";
 import { Button } from "../ui/button";
 
-const ConversationSec = ({ children }: { children: React.ReactNode }) => {
+const CodeSection = ({ children }: { children: React.ReactNode }) => {
 	const router = useRouter();
 	const { onOpen } = useProModel();
 	const { messages, push, resetMessages } = useCodeStore();
@@ -154,4 +154,4 @@ const ConversationSec = ({ children }: { children: React.ReactNode }) => {
 	);
 };
 
-export default ConversationSec;
+export default CodeSection;

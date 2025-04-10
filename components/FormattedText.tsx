@@ -1,68 +1,51 @@
+"use client";
+
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
-import "highlight.js/styles/github.css"; // ✅ Change theme if needed
+import { Components } from "react-markdown";
+import "highlight.js/styles/github.css";
 
-export default function MessageDisplay({ content }: { content: string }) {
+type MessageDisplayProps = {
+	content: string;
+};
+
+const MessageDisplay: React.FC<MessageDisplayProps> = ({ content }) => {
+	const components: Components = {
+		code({ className, children, ...rest }) {
+			const isInline = !className;
+
+			return isInline ? (
+				<code
+					className="bg-gray-200 dark:bg-gray-700 rounded px-1 py-0.5 text-sm break-words"
+					{...rest}
+				>
+					{children}
+				</code>
+			) : (
+				<pre className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 overflow-x-auto text-sm w-full break-words">
+					<code className={className} {...rest}>
+						{children}
+					</code>
+				</pre>
+			);
+		},
+	};
+
 	return (
-		<div className="text-black/80 my-auto w-full max-w-full break-words">
-			<ReactMarkdown
-				remarkPlugins={[remarkGfm]}
-				rehypePlugins={[rehypeHighlight]}
-				components={{
-					h1: ({ children }) => (
-						<h1 className="text-2xl font-bold my-2">{children}</h1>
-					),
-					h2: ({ children }) => (
-						<h2 className="text-xl font-bold my-2">{children}</h2>
-					),
-					h3: ({ children }) => (
-						<h3 className="text-lg font-bold my-2">{children}</h3>
-					),
-					h4: ({ children }) => (
-						<h4 className="text-base font-bold my-2">{children}</h4>
-					),
-					h5: ({ children }) => (
-						<h5 className="text-sm font-bold my-2">{children}</h5>
-					),
-					h6: ({ children }) => (
-						<h6 className="text-xs font-bold my-2">{children}</h6>
-					),
-
-					// ✅ Fix Inline and Block Code Handling
-					code({ inline, className, children, ...props }) {
-						if (inline) {
-							return (
-								<code className="px-1 py-0.5 bg-gray-200 rounded-md text-sm break-words">
-									{children}
-								</code>
-							);
-						}
-						return (
-							<pre className="w-full max-w-full overflow-auto whitespace-pre-wrap rounded-lg p-4 my-2 bg-black text-white">
-								<code className={className}>{children}</code>
-							</pre>
-						);
-					},
-
-					// ✅ Fix Lists
-					li({ children }) {
-						return <li className="ml-5 list-disc">{children}</li>;
-					},
-
-					// ✅ Fix Paragraph Wrapping Issue (Prevention of `<pre>` inside `<p>`)
-					p({ node, children }) {
-						if (node.children.some((child) => child.tagName === "pre")) {
-							// Prevent <pre> from being wrapped in <p>
-							return <>{children}</>;
-						}
-						return <p className="w-full max-w-full break-words">{children}</p>;
-					},
-				}}
-			>
-				{content}
-			</ReactMarkdown>
+		<div className=" max-w-[280px]  lg:max-w-screen-sm  xl:max-w-screen-md overflow-hidden ">
+			<div className="text-base w-full break-words whitespace-pre-wrap overflow-hidden">
+				<ReactMarkdown
+					remarkPlugins={[remarkGfm]}
+					rehypePlugins={[rehypeHighlight]}
+					components={components}
+				>
+					{content}
+				</ReactMarkdown>
+			</div>
 		</div>
 	);
-}
+};
+
+export default MessageDisplay;
