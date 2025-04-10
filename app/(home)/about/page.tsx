@@ -8,8 +8,8 @@ export default function page() {
 					About Top AI
 				</h2>
 				<p className="text-lg text-gray-600 dark:text-gray-300 mb-12">
-					Top AI is your all-in-one AI assistant powered by OpenAI's
-					cutting-edge models. Whether you're chatting with an intelligent
+					Top AI is your all-in-one AI assistant powered by OpenAI&apos;s
+					cutting-edge models. Whether you&apos;re chatting with an intelligent
 					assistant, generating stunning images, or crafting clean code — we
 					make AI work for you.
 				</p>
@@ -51,10 +51,11 @@ export default function page() {
 						</CardContent>
 					</Card>
 				</div>
+				
 
 				<p className="mt-12 text-sm text-gray-500 dark:text-gray-400">
-					Powered by OpenAI's GPT models. We're committed to delivering
-					reliable, secure, and intelligent AI experiences.
+					Powered by OpenAI&apos;s GPT models. We&apos;re committed to
+					delivering reliable, secure, and intelligent AI experiences.
 				</p>
 			</div>
 		</section>
