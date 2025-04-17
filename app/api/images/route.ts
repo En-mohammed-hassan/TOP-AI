@@ -21,6 +21,8 @@ export async function POST(req: Request) {
 		const user = await getUser();
 		const { prompt, count = "1", resolution = "256x256" } = body;
 		const result = imageSchema.safeParse(body);
+		console.log(result);
+		console.log(result.success);
 		if (!result.success) {
 			return NextResponse.json(
 				{ error: result.error.errors[0] },
