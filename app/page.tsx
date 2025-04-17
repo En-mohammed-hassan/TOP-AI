@@ -17,7 +17,7 @@ export default async function Home() {
 					<Link href="/">
 						<div className="flex justify-center  item-center cursor-pointer hover:opacity-60 transition-all hover:scale-110 duration-700 ">
 							<Image
-								src="/logo.jpg"
+								src="/images/logo.jpg"
 								width={40}
 								height={40}
 								alt="logo"
