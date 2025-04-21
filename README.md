@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TOP-AI
 
-## Getting Started
+A modern AI-powered web application built with **Next.js**, **React**, and **Tailwind CSS**, integrated with **Kinde authentication**, **Stripe payments**, and **OpenAI**.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- 🔐 Kinde Authentication (login, logout, protected routes)
+- 💡 OpenAI API integration
+- 💳 Stripe Payments and Webhooks
+- 🎨 Styled with Tailwind CSS
+- 🧠 AI limits and image generation support
+- ⚙️ Prisma + PostgreSQL database (via Prisma Accelerate)
+
+---
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js (React)
+- **Auth**: Kinde
+- **Payments**: Stripe
+- **AI**: OpenAI API
+- **DB**: Prisma + PostgreSQL
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+
+---
+
+## 🧑‍💻 Getting Started
+
+### 1. Clone the repo
 
 ```bash
+git clone https://github.com/En-mohammed-hassan/TOP-AI.git
+cd TOP-AI
+2. Install dependencies
+bash
+Copy
+Edit
+npm install
+3. Set up environment variables
+Create a .env file using the provided template:
+
+bash
+Copy
+Edit
+cp .env.example .env
+Then fill in your actual API keys and config values.
+
+4. Run the development server
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Visit http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🧩 Project Structure
+php
+Copy
+Edit
+TOP-AI/
+├── app/                 # App pages and layouts
+├── components/          # Reusable UI components
+├── constants/           # App-wide constants
+├── hooks/               # Custom React hooks
+├── lib/                 # Utilities and helpers
+├── prisma/              # DB schema and setup
+├── public/              # Static files
+├── styles/              # Tailwind and global CSS
+├── .env.example         # Environment config template
+├── LICENSE              # MIT License
+├── README.md            # You are here
+└── ...
+🧪 Environment Variables
+Set your variables in .env based on the structure in .env.example. Here's what's required:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+KINDE_CLIENT_ID, KINDE_CLIENT_SECRET, etc.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+OPENAI_KEY
 
-## Learn More
+STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET_KEY
 
-To learn more about Next.js, take a look at the following resources:
+DATABASE_URL
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Other settings like limits and site URL
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📦 Deployment
+This app is ready to deploy on Vercel or any Next.js-supported platform.
 
-## Deploy on Vercel
+To deploy on Vercel:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Connect your GitHub repo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add environment variables in the Vercel dashboard
+
+Done!
+
+Live Demo: https://top-ai-psi.vercel.app
+
+📜 License
+This project is licensed under the MIT License.
+
+🙌 Acknowledgments
+Kinde
+
+Stripe
+
+OpenAI
+
+Prisma
